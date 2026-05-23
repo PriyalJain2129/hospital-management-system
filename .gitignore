@@ -1,0 +1,15 @@
+# Maven build output
+target/
+*.class
+*.jar
+*.war
+
+# SECURITY - Never commit these
+hospital-backend/src/main/resources/application.properties
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

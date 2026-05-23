@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.hospital.controller.DashboardController"
+    prefWidth="1200" prefHeight="750"
+    styleClass="dashboard-root">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="top-bar">
+            <padding><Insets top="0" right="30" bottom="0" left="30"/></padding>
+            <Label text="🏥 MediCare Pro" styleClass="topbar-brand"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="welcomeLabel" styleClass="topbar-welcome"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox spacing="4" prefWidth="220" styleClass="sidebar">
+            <padding><Insets top="30" right="16" bottom="30" left="16"/></padding>
+
+            <Label text="NAVIGATION" styleClass="sidebar-section-label"/>
+            <Region prefHeight="8"/>
+
+            <Button fx:id="btnDashboard" text="📊  Dashboard"   maxWidth="Infinity" onAction="#showDashboardHome"  styleClass="nav-button,active"/>
+            <Button fx:id="btnPatients"  text="👤  Patients"    maxWidth="Infinity" onAction="#showPatients"       styleClass="nav-button"/>
+            <Button fx:id="btnDoctors"   text="🩺  Doctors"     maxWidth="Infinity" onAction="#showDoctors"        styleClass="nav-button"/>
+            <Button fx:id="btnAppointments" text="📅  Appointments" maxWidth="Infinity" onAction="#showAppointments" styleClass="nav-button"/>
+            <Button fx:id="btnBilling"   text="💳  Billing"     maxWidth="Infinity" onAction="#showBilling"        styleClass="nav-button"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Button fx:id="btnLogout" text="⬅  Logout" maxWidth="Infinity"
+                    onAction="#handleLogout" styleClass="nav-button,nav-logout"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="main-content">
+            <HBox styleClass="content-header" alignment="CENTER_LEFT">
+                <padding><Insets top="24" right="30" bottom="24" left="30"/></padding>
+                <Label fx:id="pageTitle" text="Dashboard" styleClass="page-title"/>
+            </HBox>
+            <StackPane fx:id="contentArea" VBox.vgrow="ALWAYS" styleClass="content-area">
+                <padding><Insets top="20" right="30" bottom="20" left="30"/></padding>
+            </StackPane>
+        </VBox>
+    </center>
+
+</BorderPane>

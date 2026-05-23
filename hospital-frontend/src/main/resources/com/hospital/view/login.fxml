@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.hospital.controller.LoginController"
+    prefWidth="900" prefHeight="600"
+    styleClass="root-pane">
+
+    <left>
+        <VBox alignment="CENTER" spacing="16" prefWidth="380" styleClass="left-panel">
+            <padding><Insets top="60" right="40" bottom="60" left="40"/></padding>
+
+            <Label text="🏥" styleClass="brand-icon"/>
+            <Label text="MediCare Pro" styleClass="brand-title"/>
+            <Label text="Hospital Management System" styleClass="brand-subtitle" wrapText="true"/>
+
+            <Region prefHeight="30"/>
+
+            <VBox spacing="14">
+                <Label text="✦  Patient Records and History" styleClass="feature-item"/>
+                <Label text="✦  Doctor Scheduling" styleClass="feature-item"/>
+                <Label text="✦  Appointment Management" styleClass="feature-item"/>
+                <Label text="✦  Billing and Invoicing" styleClass="feature-item"/>
+                <Label text="✦  Real-time Analytics" styleClass="feature-item"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20" styleClass="right-panel">
+            <padding><Insets top="60" right="70" bottom="60" left="70"/></padding>
+
+            <Label text="Welcome Back" styleClass="login-title"/>
+            <Label text="Sign in to your account" styleClass="login-subtitle"/>
+
+            <Region prefHeight="10"/>
+
+            <VBox spacing="6">
+                <Label text="Username" styleClass="field-label"/>
+                <TextField fx:id="usernameField" promptText="Enter your username" styleClass="input-field"/>
+            </VBox>
+
+            <VBox spacing="6">
+                <Label text="Password" styleClass="field-label"/>
+                <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="input-field"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" text="" styleClass="error-label"/>
+
+            <Button fx:id="loginButton" text="Sign In →" prefWidth="300"
+                    onAction="#handleLogin" styleClass="login-button" defaultButton="true"/>
+
+            <Region prefHeight="10"/>
+
+            <Label text="Default: admin / 1234" styleClass="hint-label"/>
+        </VBox>
+    </center>
+
+</BorderPane>
