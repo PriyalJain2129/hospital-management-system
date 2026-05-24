@@ -41,9 +41,11 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Permitting both your local test address and your new Vercel production site
+        
+        // Includes your local environment and your exact custom production domains
         configuration.setAllowedOrigins(Arrays.asList(
             "http://localhost:3000",
+            "https://hospitalmangementsystemp.vercel.app",
             "https://hospital-react-frontend.vercel.app"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
@@ -51,7 +53,8 @@ public class SecurityConfig {
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
+        // FIXED: Changed the second parameter from 'source' to 'configuration'
+        source.registerCorsConfiguration("/**", configuration); 
         return source;
     }
 
